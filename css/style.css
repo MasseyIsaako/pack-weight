@@ -44,11 +44,9 @@
 }
 
 .overlay {
-	align-items: center;
 	background: linear-gradient(#fc00ff, #00dbde);
-	display: flex;
+	display: block;
 	height: 0;
-	justify-content: center;
 	left: 0;
 	overflow: hidden;
 	position: fixed;
@@ -82,4 +80,12 @@
 	.screen-too-small {	
 		display: none;
 	}
+}
+
+.container-full {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	justify-content: center;
+	width: 100%;
 }
