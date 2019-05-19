@@ -13,19 +13,20 @@ google.charts.setOnLoadCallback(drawChart);
 var recordedWeightData = [
 	['Day', 'Taase', 'Valasi', 'Manu', 'Cochise', 'Thomas', 'Tumema', 'Lasi', 'Freida', 'Annie', 'Baseline'],
 	[0,		115,	  118,		126,	 153,	    112,	 131,	   112,	   126, 	 104,	 80],
-	[1,		115,	  118,		126,	 153,	    112,	 131,	   112,	   126, 	 104,	 80]
+	[1,		115,	  118,		126,	 153,	    112,	 131,	   112,	   126, 	 104,	 80],
+	// [5,		110,	  115,		118,	 147,	    108,	 126,	   108,	   120, 	 100,	 80]
 ];
 
 var goalWeightData = [
-	90,
-	100,
-	95,
-	110,
-	105,
-	100,
-	90,
-	95,
-	90
+	90, 	// Taase
+	100,	// Valasi
+	95,		// Manu
+	110,	// Cochise
+	105,	// Thomas
+	100,	// Tumema
+	90,		// Lasi
+	95,		// Freida
+	90		// Annie
 ];
 
 // Toggling the overlay using this boolean

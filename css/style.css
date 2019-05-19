@@ -66,3 +66,20 @@
 	font-size: 70px;
 	margin-bottom: 100px;
 }
+
+.screen-too-small {
+	align-items: center;
+	background-color: #333;
+	display: flex;
+	height: 100vh;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+}
+
+@media screen and (min-width: 992px) {
+	.screen-too-small {	
+		display: none;
+	}
+}
