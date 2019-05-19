@@ -1,0 +1,55 @@
+  <html>
+  <head>
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" id="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=10.0, initial-scale=1.0"/>
+  </head>
+  <body>
+    <main class="container-fluid">
+		<div class="row">
+			<div class="chart__info mb-5" id="chart__info">
+				<h1 class="chart__text">Weight vs Days</h1>
+				<small class="chart__text chart__text--subtitle">(Kilograms vs Days)</small>
+			</div>
+			<div class="col-12">
+				<section id="chart__element" class="container"></section>
+				<div class="overlay">
+					<section class="container">
+						<h1 class="chart__text overlay__title">Pack Weight</h1>
+						<div class="row">
+							<div class="col-4">
+								<h1 class="chart__text chart__text--title">Current:</h1>
+								<h2 id="pack-weight-current" class="chart__text chart__text--weight mb-5"></h2>
+							</div>
+							<div class="col-4">
+								<h1 class="chart__text chart__text--title">Goal:</h1>
+								<h2 id="pack-weight-goal" class="chart__text chart__text--weight"></h2>
+							</div>
+							<div class="col-4">
+								<h1 class="chart__text chart__text--title">Difference:</h1>
+								<h2 id="pack-weight-difference" class="chart__text chart__text--weight mb-5"></h2>
+							</div>
+						</div>
+						<div class="row mt-5">
+							<div class="col-6">
+								<!-- Start date -->
+								<h4 class="chart__text mt-5">Start date</h4>
+								<h4 id="start-date" class="chart__text"></h4>
+							</div>
+							<div class="col-6">
+								<!-- Current date -->
+								<h4 class="chart__text mt-5">Current date</h4>
+								<h4 id="current-date" class="chart__text"></h4>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+			
+			<button id="chart__more-info" class="btn btn-dark btn-lg">More info</button>
+		</div>
+    </main>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>

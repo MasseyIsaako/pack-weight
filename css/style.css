@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300&display=swap');
+
+* {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+}
+
+#chart__element {
+	height: calc(100vh - 223px);
+}
+
+.chart__info {
+	background: linear-gradient(#f46b45, #eea849);
+	padding: 50px 0;
+	width: 100%;
+}
+
+.chart__text {
+ 	color: #ffffff;
+ 	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+.chart__text--subtitle {
+	font-weight: 300;
+}
+
+.chart__text--weight {
+	font-size: 100px;
+}
+
+.chart__text--small {
+	display: inline;
+	font-size: 50px;
+}
+
+#chart__more-info {
+	bottom: 0;
+	display: block;
+	margin: 0 20px 20px 0;
+	position: fixed;
+	right: 0;
+}
+
+.overlay {
+	align-items: center;
+	background: linear-gradient(#fc00ff, #00dbde);
+	display: flex;
+	height: 0;
+	justify-content: center;
+	left: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	transition: height 0.2s;
+	width: 100vw;
+}
+
+.overlay--open {
+	height: 100vh;
+	overflow: scroll;
+}
+
+.overlay__title {
+	font-size: 70px;
+	margin-bottom: 100px;
+}
