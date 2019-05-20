@@ -44,27 +44,20 @@
 }
 
 .overlay {
-	align-items: center;
 	background: linear-gradient(#fc00ff, #00dbde);
-	display: flex;
+	bottom: 0;
+	display: block;
 	height: 0;
-	justify-content: center;
 	left: 0;
 	overflow: hidden;
 	position: fixed;
-	top: 0;
-	transition: height 0.2s;
+	transition: height 1s ease-in-out;
 	width: 100vw;
 }
 
 .overlay--open {
-	height: 100vh;
+	height: calc(100vh - 175px);
 	overflow: scroll;
-}
-
-.overlay__title {
-	font-size: 70px;
-	margin-bottom: 100px;
 }
 
 .screen-too-small {
@@ -82,4 +75,12 @@
 	.screen-too-small {	
 		display: none;
 	}
+}
+
+.container-full {
+	display: flex;
+	flex-direction: column;
+	height: calc(100vh - 175px);
+	justify-content: center;
+	width: 100%;
 }
