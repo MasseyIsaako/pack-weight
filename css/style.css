@@ -45,24 +45,19 @@
 
 .overlay {
 	background: linear-gradient(#fc00ff, #00dbde);
+	bottom: 0;
 	display: block;
 	height: 0;
 	left: 0;
 	overflow: hidden;
 	position: fixed;
-	top: 0;
-	transition: height 0.2s;
+	transition: height 1s ease-in-out;
 	width: 100vw;
 }
 
 .overlay--open {
-	height: 100vh;
+	height: calc(100vh - 175px);
 	overflow: scroll;
-}
-
-.overlay__title {
-	font-size: 70px;
-	margin-bottom: 100px;
 }
 
 .screen-too-small {
@@ -85,7 +80,7 @@
 .container-full {
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
+	height: calc(100vh - 175px);
 	justify-content: center;
 	width: 100%;
 }

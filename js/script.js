@@ -1,10 +1,11 @@
-
 var app = new Vue({
 	el: '#app',
 	data: {
 		weightData: [],
 		packGoal: [],
 		toggleOverlay: false,
+		chartTitle: 'Weight vs Time',
+		chartSubitle: 'Kilograms vs Days',
 		buttonText: 'More info'
 	},
 	mounted: function() {
@@ -13,7 +14,6 @@ var app = new Vue({
 		this.doPopulatePackWeightText();
 	},
 	methods: {
-
 		/**
 		 * Set data
 		 */
@@ -90,8 +90,12 @@ var app = new Vue({
 			var button = document.querySelector('#chart__more-info');
 
 			if (this.toggleOverlay) {
+				this.chartTitle = 'Weight vs Time';
+				this.chartSubitle = 'Kilograms vs Days'
 				this.buttonText = 'More info';
 			} else {
+				this.chartTitle = 'Pack Weight';
+				this.chartSubitle = 'Other Statistics'
 				this.buttonText = 'Less info';
 			}
 
@@ -103,7 +107,7 @@ var app = new Vue({
 		 * 
 		 * @return void
 		 */
-		doPopulatePackWeightText() {	
+		doPopulatePackWeightText() {
 			// Start date data
 			var startTextElement = document.querySelector('#start-date');
 			var startDate = '20/5/2019';
@@ -138,17 +142,20 @@ var app = new Vue({
 		 */
 		getPackWeightCurrent() {
 			// Retrieve last entry in  arraylist
-			var weightData = this.weightData;
-			var latestData = weightData.pop();
+			var currentWeightData = this.weightData.slice();
 			var weightTotal = 0;
+			var baseline = 80;
 
-			// Sanitise the data
-			latestData.pop();
-			latestData.shift();
+			// Sanitise the data: get rid of the outer arrays
+			currentWeightData.pop();
+			currentWeightData.shift();
 
-			latestData.forEach(function (item) {
+			// Get the array directly and remove the outer items (they are used for axis and baseline values)
+			currentWeightData[0].forEach(function (item) {
 				weightTotal += item;
 			});
+
+			weightTotal = weightTotal - baseline;
 
 			return weightTotal;
 		},
@@ -160,7 +167,7 @@ var app = new Vue({
 		 */
 		getPackWeightGoal() {
 			var total = 0;
-			var goalWeightData = this.packGoal;
+			var goalWeightData = this.packGoal.slice();
 
 			goalWeightData.forEach(function(item) {
 				total += item;
@@ -179,6 +186,6 @@ var app = new Vue({
 			var goalPackWeight = this.getPackWeightGoal();
 
 			return currentPackWeight - goalPackWeight;
-		}
+		},
 	},
 });
