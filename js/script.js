@@ -23,7 +23,7 @@ var app = new Vue({
 			var recordedWeightData = [
 				['Day', 'Taase', 'Valasi', 'Manu', 'Cochise', 'Thomas', 'Tumema', 'Lasi', 'Freida', 'Annie', 'Baseline'],
 				[0,		115,	  118,		126,	 153,	    112,	 131,	   112,	   126, 	 104,	 80],
-				[1,		115,	  118,		126,	 153,	    112,	 131,	   112,	   126, 	 104,	 80],
+				[5,		107.9,	  113.3,	121,	 146,	    106.3,	 124.6,	   106.3,	119.2, 	 98,	 80],
 				// [5,		110,	  115,		118,	 147,	    108,	 126,	   108,	   120, 	 100,	 80]
 			];
 
@@ -147,17 +147,17 @@ var app = new Vue({
 			var baseline = 80;
 
 			// Sanitise the data: get rid of the outer arrays
-			currentWeightData.pop();
-			currentWeightData.shift();
+			currentWeightData = currentWeightData.pop();
+			console.log(currentWeightData);
 
 			// Get the array directly and remove the outer items (they are used for axis and baseline values)
-			currentWeightData[0].forEach(function (item) {
+			currentWeightData.forEach(function (item) {
 				weightTotal += item;
 			});
 
 			weightTotal = weightTotal - baseline;
 
-			return weightTotal;
+			return weightTotal.toFixed(1);
 		},
 			
 		/**
@@ -185,7 +185,7 @@ var app = new Vue({
 			var currentPackWeight = this.getPackWeightCurrent();
 			var goalPackWeight = this.getPackWeightGoal();
 
-			return currentPackWeight - goalPackWeight;
+			return (currentPackWeight - goalPackWeight).toFixed(1);
 		},
 	},
 });
